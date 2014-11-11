@@ -2,15 +2,33 @@ html {
 	font-size: 1em; 
 }
 
+/*******  set the welcome page  ******/
+.first_page{
+	height:680px;
+	background-color:#99FFFF;
+	margin-top:-10px;
+	margin-left:-10px;
+	margin-right:-8.4px;
+}
+
+#change_buttom{
+	width:10%;
+	margin-top:35%;
+	margin-left:20%;
+	cursor:pointer;
+}
+/*************************************/
+
 /********  set the background  *******/
 .bg{
-
+	margin-left:-10px;
+	margin-right:-8.4px;
 	height:843px; 
+	text-align:center;
 	background-image:url(img/backimg.jpg);
 	filter:alpha(opacity=30);
 	-moz-opacity:0.3;
 	opacity:0.3; 
-	
 }
 
 .content{
@@ -37,12 +55,6 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 #left_container{
 	float:left;
-}
-
-#right_container{
-	float:right;
-	margin-right:20px;
-	margin-top:15px;
 }
 
 #password{
@@ -73,12 +85,14 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 .left_bar{
 	position:absolute;
+	margin-top:10px;
 	margin-left:20px;
 	margin-right:20px;
 }
 
 .left_bar h2,.left_bar form{
 	margin-left:30px;
+	cursor:pointer;
 }
 
 /* middle side */
@@ -142,4 +156,13 @@ nav { font-size: 1.2em; font-weight: 600; }
 .right_bar{
 	position:absolute;
 	margin-left:1090px;
+}
+
+#right_container{
+	position:absolute;
+	margin-top:30px;
+}
+
+#votebox{
+	margin-top:120px;
 }

@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)http://lightning10.github.io/gamecomment/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+	<head>
 		<title>GamePeen 電評網</title>
 		<meta charset="UTF-8">
-		<meta name="keywords" content="電評網,電評,電玩遊戲評論,電玩評論,GamePeen,GG">
-		<meta name="description" content="GG 好的遊戲讓你good game，壞的遊戲讓你完蛋">
-		<meta name="google-site-verification" content="_kjMLw_mtUuIV0QlPfpWr9N7G6-_PPoVK9XocaaFKTY">
-	
-		<link rel="stylesheet" type="text/css" href="./GamePeen 電評網_files/index.css">
-		
-		<!--
-		<script type="text/javascript"></script>		
-		-->
+		<meta name="keywords" content="電評網,電評,電玩遊戲評論,電玩評論,GamePeen,GG"/>
+		<meta name="description" content="GG 好的遊戲讓你good game，壞的遊戲讓你完蛋"/>
+		<meta name="google-site-verification" content="_kjMLw_mtUuIV0QlPfpWr9N7G6-_PPoVK9XocaaFKTY" />
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<!-- JavaScript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>	
 		
 	</head>
 		
 	<body>
+		<!-- set the first welcome page of the web -->
+		<div class="first_page">
+			<div class="welcome_words" style="cursor:pointer;" onclick="change_top_page()">
+				<img id="welcome" src="img/welcome.png" style="position:absolute;width:55%; margin-left:5%;margin-top:6%; -webkit-transform:rotate(-13deg); -moz-transform:rotate(-13deg)">
+				<img id="to" src="img/to.png" style="position:absolute;width:10%; margin-left:48%; margin-top:21%; -webkit-transform:rotate(5deg); -moz-transform:rotate(5deg)">
+				<img id="enjoy" src="img/enjoy.png" style="position:absolute;width:15%; margin-left:3%; margin-top:1%; display:none; cursor:auto;">
+			</div> 
+			
+			<img id="icon" src="img/gamepeen.png" style="position:absolute;width:20%; margin-left:70%;margin-top:29%;" onmousemove="change_icon();" onmouseout="back_icon();">
+			<img id="change_buttom" src="img/page_buttom_origin.png" onmousemove="change_buttom_in()" onmouseout="change_buttom_out()" onclick="roll()">
+		</div>
+		
 		<!-- set the background of the web -->
-		<div class="bg"> </div>
-		<div class="content">
+		<div class="bg second_page" style="display:none; margin-top:100px;" > </div>
+		<div class="content second_page" style="display:none;">
 			<!-- the header of the web -->
-			<nav class="overview" >
+			<nav class="overview" role="navigation">
 				<div class="container">
 					<!-- the left side of the container -->
 					<div id="left_container">
 						<div class="col-md-2 col-sm-2 col-xs-12">
 							<div class="header">
-                            	<span style="font-size: 250% ; color:#F00078;">電評網 GamePeen</span>
+								<span style="font-size: 250% ; color:#F00078;" >電評網 GamePeen</span>
 							</div>
-						<div>		
-						</div>
-							<div>
+						</div>		
+						<div >
+							<div >
 								<span class="gg" style="font-size: 100%"><i>好的遊戲讓你good game，壞的遊戲讓你完蛋~~~~</i></span>
 							</div>
 						</div>
 					</div>
-					
-					<!-- the right side of the container -->
-					<div id="right_container">
-					
-                    	
-                      
-					</div>
 				</div>
-			 </nav>
+			</nav>
 			
-			<marquee style="font-size: 150% ; color:#00E3E3;" bgcolor="5E005E"><b>累了嗎，玩個遊戲吧~~</b></marquee>
+			<marquee style="font-size: 150% ; color:#00E3E3;" bgcolor=5E005E >
+				<b>累了嗎，玩個遊戲吧~~</b>
+			</marquee>
 			
 			
 			<div class="main">
@@ -53,32 +58,31 @@
 				<div class="left_bar_bg"></div>  
 				<!-- set the content of the left_bar -->
 				<div class="left_bar"> 
-					<h2 style="color:#2828FF;">遊戲平台偏好</h2><h2>
-					<form method="post">
-						<input type="checkbox" name="interst">PS4<br>
-						<input type="checkbox" name="interst">PS3<br>
-						<input type="checkbox" name="interst">WiiU<br>
-						<input type="checkbox" name="interst">XboxOne<br>
-						<input type="checkbox" name="interst">Xbox360<br>
-						<input type="checkbox" name="interst">3DS<br>
-						<input type="checkbox" name="interst">PSV<br>
-						<input type="checkbox" name="interst">iPhone<br>
-						<input type="checkbox" name="interst">WinPhone<br>
-						<input type="checkbox" name="interst">Android<br>
-					
-					</h2><h2 style="color:#2828FF;">遊戲類型偏好</h2><h2>
-					
-						<input type="checkbox" name="interst">休閒類<br>
-						<input type="checkbox" name="interst">動作類<br>
-						<input type="checkbox" name="interst">運動類<br>
-						<input type="checkbox" name="interst">益智類<br>
-						<input type="checkbox" name="interst">格鬥類<br>
-						<input type="checkbox" name="interst">博奕類<br>
-                        
-                        <input  id="confirm" type="submit" value="確定" />   
+					<h2 style="color:#2828FF;">遊戲平台偏好<h2>
+					<form id="gameplatformer">
+						<INPUT type=checkbox name=interst>PS4<br>
+						<INPUT type=checkbox name=interst>PS3<br>
+						<INPUT type=checkbox name=interst>WiiU<br>
+						<INPUT type=checkbox name=interst>XboxOne<br>
+						<INPUT type=checkbox name=interst>Xbox360<br>
+						<INPUT type=checkbox name=interst>3DS<br>
+						<INPUT type=checkbox name=interst>PSV<br>
+						<INPUT type=checkbox name=interst>iPhone<br>
+						<INPUT type=checkbox name=interst>WinPhone<br>
+						<INPUT type=checkbox name=interst>Android<br>
                         
 					</form>
-				</h2></div>
+                    <button id="insert" > 增加標籤 </button> 
+					<h2 style="color:#2828FF;">遊戲類型偏好<h2>
+					<form>
+						<INPUT type=checkbox name=interst>休閒類<br>
+						<INPUT type=checkbox name=interst>動作類<br>
+						<INPUT type=checkbox name=interst>運動類<br>
+						<INPUT type=checkbox name=interst>益智類<br>
+						<INPUT type=checkbox name=interst>格鬥類<br>
+						<INPUT type=checkbox name=interst>博奕類<br>
+					</form>
+				</div>
 				
 				<!-- set the background of the middle_part -->
 				<div class="middle_bg"></div>  
@@ -88,18 +92,18 @@
                     <input id="search" type="text" name="search"  placeholder="輸入想搜尋之關鍵字"  size="60" /> 
                     <input type="submit" value="搜尋" />                     
                     </form>
-					<hr size="2" color="#2828FF" width="600">
+					<HR size="2" color="#2828FF" width="600"></HR>
 					
 					<div class="gameimg">
-						<img src="./GamePeen 電評網_files/game1.jpg" width="110px" height="110px" class="img">
-						<p class="description"><i><a href="http://zh.tos.wikia.com/wiki/%E7%A5%9E%E9%AD%94%E4%B9%8B%E5%A1%94_Tower_of_Saviors_%E7%BB%B4%E5%9F%BA?variant=zh-tw" >神魔之塔</a>:簡單描述~~~~</i></p>
+						<img src="img/game1.jpg" width="110px" height="110px" class="img">
+						<p class="description"><i>神魔之塔:簡單描述~~~~</i></p>
 					</div>
 					<div class="gameimg">
-						<img src="./GamePeen 電評網_files/game2.jpg" width="110px" height="110px" class="img">
+						<img src="img/game2.jpg" width="110px" height="110px" class="img">
 						<p class="description"><i>英雄聯盟:簡單描述~~~~</i></p>
 					</div>
 					<div class="gameimg">
-						<img src="./GamePeen 電評網_files/game3.jpg" width="110px" height="110px" class="img">
+						<img src="img/game3.jpg" width="110px" height="110px" class="img">
 						<p class="description"><i>流亡暗道:簡單敘述~~~~</i></p>
 					</div>
 				</div>
@@ -108,18 +112,22 @@
 				<div class="right_bar_bg"></div>  
 				<!-- set the content of the right_bar -->
 				<div class="right_bar">
-                <form id=" member " method="post" >
+					
+					<!-- input the password for the member  -->
+					<div id="right_container">
+						<form id=" member " method="post" >
                          會員登入:<br/>
                         <input id="account" type="text"  name="accuont" placeholder="帳號"/><br/>
 						<input id="password" type="password"  name="password" placeholder="密碼"/> <br/>
                         
                         <input id="login" type="submit" value="登入" />
                         </form>
-                
-					<h2 style="color:#D9006C;">最近投票</h2><h2>
-                     
-					<span style="font-size: 70%"><i>暫時沒有投票喔~~~~</i></span>
-				</h2></div>
+					</div>
+					<div id="votebox">
+						<h2 style="color:#D9006C;">最近投票<h2>
+						<span style="font-size: 70%"><i>暫時沒有投票喔~~~~</i></span>
+					</div>
+				</div>
 				
 			</div>
 
@@ -127,13 +135,72 @@
 			
 		</div>
 		
-		
-		
-		
-		
-		
-		
-		
-		
+		<script language="javascript">
+			
+			//change the performance of the first page
+			function change_top_page()
+			{
+				jQuery('#welcome').css('display','none');
+				jQuery('#to').css('display','none');
+				jQuery('#icon').animate({'margin-top':'38%','margin-left':'80%'},1000);
+				jQuery('#change_buttom').animate({'margin-left':'7%','margin-top':'37%'},1000);
+				setTimeout(("jQuery('#enjoy').show()"),900);
+				
 	
-</body></html>
+
+			}
+			
+			//change the page between the first page and the main page
+			function change_buttom_in()
+			{
+				jQuery('#change_buttom').attr("src","img/page_buttom_change.png");
+			}
+			
+			function change_buttom_out()
+			{
+				jQuery('#change_buttom').attr("src","img/page_buttom_origin.png");
+			}
+			
+			//rolling the main page up and show the main page of the web
+			function roll()
+			{
+				jQuery('.second_page').show();
+				jQuery('.first_page').animate({'margin-top':'-800px'},2000);
+				$('#change_buttom').hide('slow');
+			}
+			
+			//change the icon of the "gamepeen"
+			function change_icon()
+			{
+				jQuery('#icon').attr("src","img/gamepeen2.png");
+			}
+			
+			//change the icon of the origin "gamepeen"
+			function back_icon()
+			{
+				jQuery('#icon').attr("src","img/gamepeen.png");
+				
+			}
+			
+			//新增遊戲類別
+			
+			$(document).ready(function(e) {
+                $("#insert").click(function(){ $("#gameplatformer").append(
+				" <INPUT type=checkbox name=interst> new <br>        "	
+				);  
+				
+				});
+				
+            });
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+		
+	</body>
+</html>
