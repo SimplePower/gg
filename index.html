@@ -58,8 +58,8 @@
 				<div class="left_bar_bg"></div>  
 				<!-- set the content of the left_bar -->
 				<div class="left_bar"> 
-					<h2 style="color:#2828FF;">遊戲平台偏好<h2>
-					<form id="gameplatformer">
+					<h2 id="left1" style="color:#2828FF;">遊戲平台偏好<h2>
+					<form id="gameplatformer" method="post">
 						<INPUT type=checkbox name=interst>PS4<br>
 						<INPUT type=checkbox name=interst>PS3<br>
 						<INPUT type=checkbox name=interst>WiiU<br>
@@ -72,9 +72,9 @@
 						<INPUT type=checkbox name=interst>Android<br>
                         
 					</form>
-                    <button id="insert" > 增加標籤 </button> 
-					<h2 style="color:#2828FF;">遊戲類型偏好<h2>
-					<form>
+                    <button id="insert1" > 增加標籤 </button> 
+					<h2 id="left2" style="color:#2828FF;">遊戲類型偏好<h2>
+					<form id="gametype" method="post">
 						<INPUT type=checkbox name=interst>休閒類<br>
 						<INPUT type=checkbox name=interst>動作類<br>
 						<INPUT type=checkbox name=interst>運動類<br>
@@ -82,6 +82,7 @@
 						<INPUT type=checkbox name=interst>格鬥類<br>
 						<INPUT type=checkbox name=interst>博奕類<br>
 					</form>
+                    <button id="insert2" > 增加標籤 </button> 
 				</div>
 				
 				<!-- set the background of the middle_part -->
@@ -137,6 +138,8 @@
 		
 		<script language="javascript">
 			
+			var counta = 1;
+			var countb = 1;
 			//change the performance of the first page
 			function change_top_page()
 			{
@@ -182,18 +185,38 @@
 				
 			}
 			
-			//新增遊戲類別
-			
-			$(document).ready(function(e) {
-                $("#insert").click(function(){ $("#gameplatformer").append(
-				" <INPUT type=checkbox name=interst> new <br>        "	
-				);  
+			//伸縮
+			    $("#gameplatformer").hide();
+			    $("#gametype").hide();
+			  $("#left1").click(function(){
+				  $("#gameplatformer").toggle(1000);
+				  });
+			    $("#left2").click(function(){
+				  $("#gametype").toggle(1000);
+				  });
+			 
+			 //新增遊戲類別
+		
+              $("#insert1").click(function(){ 
+				$("#gameplatformer").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
+			counta++;	});
 				
-				});
-				
-            });
+			  $("#insert2").click(function(){ 
+			    $("#gametype").append(	' <p id="inputblockb' + countb +'"> <input  id="newtypeb'+countb+'" type=text >   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> '   );											
+			countb++;	});
+						 			
+           
 			
-			
+           function adda(id){
+			    $("#gameplatformer").append('<INPUT type=checkbox name=interst>'+$("#newtypea"+id).val()+' <br>')
+			    $("#inputblocka"+id).remove();
+			   
+			   }
+		    function addb(id){
+				$("#gametype").append('<INPUT type=checkbox name=interst>'+$("#newtypeb"+id).val()+' <br>')
+			    $("#inputblockb"+id).remove();
+			   
+			   }
 			
 			
 		</script>

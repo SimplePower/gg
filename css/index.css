@@ -84,9 +84,12 @@ nav { font-size: 1.2em; font-weight: 600; }
 }
 
 .left_bar{
+	overflow:scroll;	
+	width:230px;
+	height:600px;
 	position:absolute;
 	margin-top:10px;
-	margin-left:20px;
+	margin-left:10px;
 	margin-right:20px;
 }
 
@@ -116,10 +119,17 @@ nav { font-size: 1.2em; font-weight: 600; }
 }
 
 #search{
+    
 	margin-left:20px;
 	margin-top:7px;
 	margin-bottom:10px;
+
 }
+
+#search:focus{
+	background-color:#FFF
+		
+	}
 
 .gameimg{
 	margin-left:40px;
