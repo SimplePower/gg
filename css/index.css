@@ -84,15 +84,28 @@ nav { font-size: 1.2em; font-weight: 600; }
 }
 
 .left_bar{
+	overflow:scroll;	
+	width:230px;
+	height:600px;
 	position:absolute;
 	margin-top:10px;
-	margin-left:20px;
+	margin-left:10px;
 	margin-right:20px;
 }
 
-.left_bar h2,.left_bar form{
+.left_bar form,.left_bar h2{
 	margin-left:30px;
 	cursor:pointer;
+}
+#insert1, #insert2{
+	margin-left:30px;
+}
+.left_bar h3{
+	margin-left:60px;
+	color:#2828FF;
+}
+#gametype{
+	font-size:120%
 }
 
 /* middle side */
@@ -116,10 +129,17 @@ nav { font-size: 1.2em; font-weight: 600; }
 }
 
 #search{
+    
 	margin-left:20px;
 	margin-top:7px;
 	margin-bottom:10px;
+
 }
+
+#search:focus{
+	background-color:#FFF
+		
+	}
 
 .gameimg{
 	margin-left:40px;
