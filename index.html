@@ -58,30 +58,49 @@
 				<div class="left_bar_bg"></div>  
 				<!-- set the content of the left_bar -->
 				<div class="left_bar"> 
-					<h2 style="color:#2828FF;">遊戲平台偏好<h2>
-					<form id="gameplatformer">
+					<h2 id="left1" style="color:#2828FF;">遊戲平台</h2>
+					<form id="gameplatformer" method="post">
+						<form> </form>
+						<h3 id="PS">Playstation</h3>
+						<form id="PS_element">
 						<INPUT type=checkbox name=interst>PS4<br>
 						<INPUT type=checkbox name=interst>PS3<br>
-						<INPUT type=checkbox name=interst>WiiU<br>
+						</form>
+						<h3 id="MS">Xbox</h3>
+						<form id="MS_element">
 						<INPUT type=checkbox name=interst>XboxOne<br>
 						<INPUT type=checkbox name=interst>Xbox360<br>
-						<INPUT type=checkbox name=interst>3DS<br>
+						</form>
+						<h3 id="Nin">Nintendo</h3>
+						<form id="Nin_element">
+						<INPUT type=checkbox name=interst>Wii<br>
+						<INPUT type=checkbox name=interst>WiiU<br>
+						</form>
+						<h3 id="Protable">掌上遊戲機</h3>
+						<form id="Protable_element">
 						<INPUT type=checkbox name=interst>PSV<br>
+						<INPUT type=checkbox name=interst>N3DS<br>
+						</form>
+						<h3 id="Mobile">行動裝置</h3>						
+						<form id="Mobile_element">
 						<INPUT type=checkbox name=interst>iPhone<br>
-						<INPUT type=checkbox name=interst>WinPhone<br>
 						<INPUT type=checkbox name=interst>Android<br>
-                        
+						<INPUT type=checkbox name=interst>WinPhone<br>
+						</form>
+						<h3 id="Else">其他類別</h3>
+						<form id="Else_element"> </form>	
 					</form>
-                    <button id="insert" > 增加標籤 </button> 
-					<h2 style="color:#2828FF;">遊戲類型偏好<h2>
-					<form>
-						<INPUT type=checkbox name=interst>休閒類<br>
-						<INPUT type=checkbox name=interst>動作類<br>
-						<INPUT type=checkbox name=interst>運動類<br>
-						<INPUT type=checkbox name=interst>益智類<br>
-						<INPUT type=checkbox name=interst>格鬥類<br>
-						<INPUT type=checkbox name=interst>博奕類<br>
+                    <button id="insert1" > 新增標籤 </button> 
+					<h2 id="left2" style="color:#2828FF;">遊戲類型</h2>
+					<form id="gametype" method="post">				
+						<INPUT type=checkbox name=interst>動作遊戲<br>
+						<INPUT type=checkbox name=interst>運動遊戲<br>
+						<INPUT type=checkbox name=interst>射擊遊戲<br>
+						<INPUT type=checkbox name=interst>線上遊戲<br>
+						<INPUT type=checkbox name=interst>策略模擬遊戲<br>
+
 					</form>
+                    <button id="insert2" > 新增標籤 </button> 
 				</div>
 				
 				<!-- set the background of the middle_part -->
@@ -137,6 +156,8 @@
 		
 		<script language="javascript">
 			
+			var counta = 1;
+			var countb = 1;
 			//change the performance of the first page
 			function change_top_page()
 			{
@@ -182,18 +203,61 @@
 				
 			}
 			
-			//新增遊戲類別
-			
-			$(document).ready(function(e) {
-                $("#insert").click(function(){ $("#gameplatformer").append(
-				" <INPUT type=checkbox name=interst> new <br>        "	
-				);  
-				
+			//伸縮
+			    //$("#gameplatformer").hide();
+				//$("#gametype").hide();
+				$("#PS_element").hide();
+				$("#MS_element").hide();
+				$("#Nin_element").hide();
+				$("#Protable_element").hide();
+				$("#Mobile_element").hide();
+		
+				$("#PS").click(function(){
+				  $("#PS_element").toggle(1000);
 				});
-				
-            });
+				$("#MS").click(function(){
+				  $("#MS_element").toggle(1000);
+				});  
+				$("#Nin").click(function(){
+				  $("#Nin_element").toggle(1000);
+				});
+				$("#Protable").click(function(){
+				  $("#Protable_element").toggle(1000);
+				});
+				$("#Mobile").click(function(){
+				  $("#Mobile_element").toggle(1000);
+				});
+
+			    $("#left2").click(function(){
+				  $("#gametype").toggle(1000);
+				  });
+			 
+			 //新增遊戲類別
+		
+/*            $("#insert1").click(function(){ 
+				$("#gameplatformer").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
+			counta++;	});
+*/
+			  $("#insert1").click(function(){ 
+				$("#Else_element").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
+			counta++;	});
 			
+			  $("#insert2").click(function(){ 
+			    $("#gametype").append(	' <p id="inputblockb' + countb +'"> <input  id="newtypeb'+countb+'" type=text >   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> '   );											
+			countb++;	});
+						 			
+           
 			
+           function adda(id){
+			    $("#Else_element").append('<INPUT type=checkbox name=interst>'+$("#newtypea"+id).val()+' <br>')
+			    $("#inputblocka"+id).remove();
+			   
+			   }
+		    function addb(id){
+				$("#gametype").append('<INPUT type=checkbox name=interst>'+$("#newtypeb"+id).val()+' <br>')
+			    $("#inputblockb"+id).remove();
+			   
+			   }
 			
 			
 		</script>
