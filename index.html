@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<title>GamePeen 電評網</title>
@@ -155,6 +155,12 @@
 		</div>
 		
 		<script language="javascript">
+			function testForEnter(){    
+				if (event.keyCode == 13){        
+					event.cancelBubble = true;
+					event.returnValue = false;
+				}
+			}
 			
 			var counta = 1;
 			var countb = 1;
@@ -238,15 +244,20 @@
 				$("#gameplatformer").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
 			counta++;	});
 */
-			  $("#insert1").click(function(){ 
-				$("#Else_element").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
-			counta++;	});
+			$("#insert1").click(
+				function(){		  
+					$("#Else_element").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" onKeyDown="testForEnter();">   <input type="button" value= "新增" onclick="adda('+ counta+')" > </p> '); 
+					counta++;				
+				}				
+			);
 			
-			  $("#insert2").click(function(){ 
-			    $("#gametype").append(	' <p id="inputblockb' + countb +'"> <input  id="newtypeb'+countb+'" type=text >   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> '   );											
-			countb++;	});
-						 			
-           
+			$("#insert2").click(
+				function(){ 
+					$("#gametype").append(' <p id="inputblockb' + countb +'"> <input id="newtypeb'+countb+'" type="text" onKeyDown="testForEnter();">   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> ');											
+					countb++;
+				}
+			);
+			   
 			
            function adda(id){
 			    $("#Else_element").append('<INPUT type=checkbox name=interst>'+$("#newtypea"+id).val()+' <br>')
