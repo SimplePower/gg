@@ -5,7 +5,7 @@ html {
 /*******  set the welcome page  ******/
 .first_page{
 	height:680px;
-	background-color:#99FFFF;
+	background-color:#FFFFFF;
 	margin-top:-10px;
 	margin-left:-10px;
 	margin-right:-8.4px;
@@ -17,6 +17,28 @@ html {
 	margin-left:20%;
 	cursor:pointer;
 }
+
+.roll{
+	display:none;
+	height:100%;
+	position:relative;
+}
+
+#dynamic_imgs{
+	display:none;
+	position:absolute;
+	width:87%;
+	height:81.7%;
+	margin-top:-45.29%;
+	margin-left:3.9%;
+	z-index:2;
+}
+
+#dynamic_imgs p{
+	-webkit-writing-mode: vertical-lr;
+	writing-mode:vertical-lr;
+}
+  
 /*************************************/
 
 /********  set the background  *******/
@@ -37,7 +59,10 @@ html {
 /*************************************/
 
 /********  set the navigation  *******/
-nav { font-size: 1.2em; font-weight: 600; }
+nav { 
+	font-size:1.2em;
+	font-weight: 600;
+}
 
 .overview {
 	background-color:#BEBEBE;
@@ -77,16 +102,15 @@ nav { font-size: 1.2em; font-weight: 600; }
 	opacity:0.7; 
 	border-radius: 5px; 
 	float:left;
-	margin-top:20px;
 	margin-left:20px;
 	width:230px;
 	height:600px;
 }
 
 .left_bar{
-	overflow:scroll;	
+	overflow:auto;
 	width:230px;
-	height:600px;
+	height:555px;
 	position:absolute;
 	margin-top:10px;
 	margin-left:10px;
@@ -95,8 +119,13 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 .left_bar form,.left_bar h2{
 	margin-left:30px;
+	cursor:default;
+}
+
+.left_bar h3,.left_bar button{
 	cursor:pointer;
 }
+
 #insert1, #insert2{
 	margin-left:30px;
 }
@@ -116,7 +145,6 @@ nav { font-size: 1.2em; font-weight: 600; }
 	-moz-opacity:0.7;
 	opacity:0.7; 
 	border-radius: 5px; 
-	margin-top:20px;
 	margin-left:260px;
 	width:800px;
 	height:600px;
@@ -138,12 +166,21 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 #search:focus{
 	background-color:#FFF
-		
-	}
+}
 
 .gameimg{
-	margin-left:40px;
-	margin-top:40px;
+	margin-left:4%;
+	margin-top:15px;
+	height:130px;
+	width:90%;
+	cursor:pointer;
+	border-radius:2%;
+}
+
+.gameimg img{
+	margin-top:10px;
+	margin-left:2%;
+	border-radius:15%;
 }
 
 .img{
@@ -155,9 +192,21 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 .description{
 	height:110px;
-	margin-left:30px;
+	margin-left:22%;
+	margin-top:-114px;
 }
 
+/* the internal introduction */
+.inner_introduction{
+	background-color:#FFFFFF;
+	display:none;
+	margin-left:2%;
+	width:10%;
+	height:20px;
+	position:absolute;
+	border-radius:2%;
+}
+ 
 /* right bar */
 .right_bar_bg{
 	position:absolute;
@@ -167,7 +216,6 @@ nav { font-size: 1.2em; font-weight: 600; }
 	opacity:0.7; 
 	border-radius: 5px; 
 	float:right;
-	margin-top:20px;
 	margin-left:1070px;
 	width:210px;
 	height:600px;
@@ -181,8 +229,4 @@ nav { font-size: 1.2em; font-weight: 600; }
 #right_container{
 	position:absolute;
 	margin-top:30px;
-}
-
-#votebox{
-	margin-top:120px;
 }
