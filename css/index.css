@@ -4,11 +4,19 @@ html {
 
 /*******  set the welcome page  ******/
 .first_page{
+<<<<<<< HEAD
 	height: 680px;
 	background-color: #B3B3B3;
 	margin-top: -10px;
 	margin-left: -10px;
 	margin-right: -8.4px;
+=======
+	height:680px;
+	background-color:#FFFFFF;
+	margin-top:-10px;
+	margin-left:-10px;
+	margin-right:-8.4px;
+>>>>>>> origin/gh-pages
 }
 
 #change_buttom{
@@ -43,12 +51,18 @@ html {
 
 /********  set the background  *******/
 .bg{
+<<<<<<< HEAD
 	background-color: #000000;
+=======
+>>>>>>> origin/gh-pages
 	margin-left:-10px;
 	margin-right:-8.4px;
 	height:843px; 
 	text-align:center;
+<<<<<<< HEAD
 	opacity: 0.3;
+=======
+>>>>>>> origin/gh-pages
 }
 
 .content{
@@ -61,6 +75,7 @@ nav {
 	font-size:1.2em;
 	font-weight: 600;
 }
+<<<<<<< HEAD
 
 #title{
 	margin-left: 20px;
@@ -68,6 +83,8 @@ nav {
 	color: #FFFF33;
 	text-shadow: -6px 10px 6px #0066CC
 	}
+=======
+>>>>>>> origin/gh-pages
 
 .overview {
 	background-color: #00CC99;
