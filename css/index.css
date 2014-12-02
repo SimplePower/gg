@@ -47,10 +47,6 @@ html {
 	margin-right:-8.4px;
 	height:843px; 
 	text-align:center;
-	background-image:url(img/backimg.jpg);
-	filter:alpha(opacity=30);
-	-moz-opacity:0.3;
-	opacity:0.3; 
 }
 
 .content{
@@ -97,9 +93,6 @@ nav {
 .left_bar_bg{
 	position:absolute;
 	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
 	border-radius: 5px; 
 	float:left;
 	margin-left:20px;
@@ -141,12 +134,9 @@ nav {
 .middle_bg{
 	position:absolute;
 	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
 	border-radius: 5px; 
 	margin-left:260px;
-	width:800px;
+	width:820px;
 	height:600px;
 }
 
@@ -201,8 +191,6 @@ nav {
 	background-color:#FFFFFF;
 	display:none;
 	margin-left:2%;
-	width:10%;
-	height:20px;
 	position:absolute;
 	border-radius:2%;
 }
@@ -210,15 +198,14 @@ nav {
 /* right bar */
 .right_bar_bg{
 	position:absolute;
-	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
-	border-radius: 5px; 
 	float:right;
 	margin-left:1070px;
+}
+
+#votebox,#right_container
+{
 	width:210px;
-	height:600px;
+	border-radius: 5px; 
 }
 
 .right_bar{
@@ -226,7 +213,23 @@ nav {
 	margin-left:1090px;
 }
 
-#right_container{
+#member_joining{
+	background-color:white;
+	height:25px;
+	width:41%;
 	position:absolute;
-	margin-top:30px;
+	margin-top:54%;
+	margin-left:52%;
+	display:none;
+	border-style:double;
+	border-radius:5%;
+	border-width:10px;
+	border-color:blue;
+	overflow:auto;
+	font-size:130%;
+}
+
+#member_joining form, #member_joining input{
+	margin-left:15%;
+	margin-top:20px;
 }
