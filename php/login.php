@@ -21,13 +21,13 @@
 				
 				//check the correct password
 				if($check_password == $password)	
-					echo "歡迎回來 $row[1]";	
+					echo "~~歡迎回來 $row[1]~~";	
 				else
-					echo "請輸入正確的密碼";
+					echo "請輸入正確的密碼！！";
 			}
 			
 			else
-				echo "您輸入了不存在的帳號";
+				echo "您輸入了不存在的帳號！！";
 		}
 	
 		else
@@ -35,6 +35,6 @@
 	}
 	
 	else
-		echo "請完整輸入帳號和密碼";
+		echo "請完整輸入帳號和密碼！！";
 	
 ?>

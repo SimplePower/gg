@@ -673,10 +673,11 @@
 						<form id="member" style="margin-top:12px; margin-left:3%;"><b>會員登入:</b><br/>
 							<input id="account" name="account" type="text"  name="account" placeholder="帳號" style="margin-top:10%; margin-left:3%;"/><br/>
 							<input id="password" name="password" type="password"  name="password" placeholder="密碼" style="position:absolute;  margin-left:2.7%;"/> <br/>                 
-							<input id="login" style="margin-top:20px; margin-left:6%;" type="submit" value="登入" onclick="return login()">
+							<input type="submit" style="margin-top:20px; margin-left:6%;" value="登入" onclick="return login()">
+							<p id="joinus" style="color:blue; margin-top:-10%; margin-left:52%; cursor:pointer;" onclick="member_join()"><b><u>加入會員~~</u></b></p>
 						</form>
 						
-						<p id="joinus" style="color:blue; margin-top:-10%; margin-left:52%; cursor:pointer;" onclick="member_join()"><b><u>加入會員~~</u></b></p>
+						
 					</div>
 					
 					<!-- join for the member -->
@@ -886,42 +887,45 @@
 			function login()
 			{
 				$.ajax({
-					url:"php/login.php",
-					data:
-					{
-						account:jQuery('input[name = account]').val(),
-						password:jQuery('input[name = password]').val(),
-					},
+				url:"php/login.php",
+				data:
+				{
+					account:jQuery('input[name = account]').val(),
+					password:jQuery('input[name = password]').val()
+				},
 					
-					type:"POST",
+				type:"POST",
 					
-					success:function(res)
+				success:function(res)
+				{
+					$('#loading').remove();
+					
+					
+					if(res == "請輸入正確的密碼！！" || res == "您輸入了不存在的帳號！！" || res == "請完整輸入帳號和密碼！！")
 					{
-						//delete the message before
-						if($('#check'))
-							$('#check').remove();
-						
-						$('#loading').remove();
-						
-						
-						//successfully joined
-						if(res == "~~恭喜加入我們~~")
-						{
-							
-						}
-						
-						else
-						{
-							$('#member').show();
-							$('#member_joining').append('<h2 id="check">' + res);
-						}
+						$('#member').show();
+						alert(res);
 					}
+					
+					else
+					{
+						$('#right_container').append('<h3 id="success_login" style="color:blue; margin-left:10%; margin-top:15%; font-size:120%;"><i><u>' + res);
+						$('#right_container').append('<input id="logout" type="submit" style="margin-left:50%;" value="登出" onclick="logout()">');
+					}
+				}
 				});
 				
 				$('#member').hide();
-				$('#right_container').append('<img id="loading" src="loading.gif" style="margin-left:20%; margin-top:45%;">');
+				$('#right_container').append('<img id="loading" src="loading.gif" style="margin-left:12%; margin-top:32%;">');
 				
 				return false;
+			}
+			
+			function logout()
+			{
+				$('#success_login').remove();
+				$('#logout').remove();
+				$('#member').show();
 			}
 
 			//伸縮
