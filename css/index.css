@@ -1,11 +1,11 @@
-﻿html { 
+html { 
 	font-size: 1em; 
 }
 
 /*******  set the welcome page  ******/
 .first_page{
 	height:680px;
-	background-color:#99FFFF;
+	background-color:#FFFFFF;
 	margin-top:-10px;
 	margin-left:-10px;
 	margin-right:-8.4px;
@@ -17,6 +17,28 @@
 	margin-left:20%;
 	cursor:pointer;
 }
+
+.roll{
+	display:none;
+	height:100%;
+	position:relative;
+}
+
+#dynamic_imgs{
+	display:none;
+	position:absolute;
+	width:87%;
+	height:81.7%;
+	margin-top:-45.29%;
+	margin-left:3.9%;
+	z-index:2;
+}
+
+#dynamic_imgs p{
+	-webkit-writing-mode: vertical-lr;
+	writing-mode:vertical-lr;
+}
+  
 /*************************************/
 
 /********  set the background  *******/
@@ -25,10 +47,6 @@
 	margin-right:-8.4px;
 	height:843px; 
 	text-align:center;
-	background-image:url(img/backimg.jpg);
-	filter:alpha(opacity=30);
-	-moz-opacity:0.3;
-	opacity:0.3; 
 }
 
 .content{
@@ -37,7 +55,10 @@
 /*************************************/
 
 /********  set the navigation  *******/
-nav { font-size: 1.2em; font-weight: 600; }
+nav { 
+	font-size:1.2em;
+	font-weight: 600;
+}
 
 .overview {
 	background-color:#BEBEBE;
@@ -72,21 +93,17 @@ nav { font-size: 1.2em; font-weight: 600; }
 .left_bar_bg{
 	position:absolute;
 	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
 	border-radius: 5px; 
 	float:left;
-	margin-top:20px;
 	margin-left:20px;
 	width:230px;
 	height:600px;
 }
 
 .left_bar{
-	overflow:scroll;	
+	overflow:auto;
 	width:230px;
-	height:600px;
+	height:555px;
 	position:absolute;
 	margin-top:10px;
 	margin-left:10px;
@@ -95,8 +112,13 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 .left_bar form,.left_bar h2{
 	margin-left:30px;
+	cursor:default;
+}
+
+.left_bar h3,.left_bar button{
 	cursor:pointer;
 }
+
 #insert1, #insert2{
 	margin-left:30px;
 }
@@ -112,13 +134,9 @@ nav { font-size: 1.2em; font-weight: 600; }
 .middle_bg{
 	position:absolute;
 	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
 	border-radius: 5px; 
-	margin-top:20px;
 	margin-left:260px;
-	width:800px;
+	width:820px;
 	height:600px;
 }
 
@@ -138,12 +156,21 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 #search:focus{
 	background-color:#FFF
-		
-	}
+}
 
 .gameimg{
-	margin-left:40px;
-	margin-top:40px;
+	margin-left:4%;
+	margin-top:15px;
+	height:130px;
+	width:90%;
+	cursor:pointer;
+	border-radius:2%;
+}
+
+.gameimg img{
+	margin-top:10px;
+	margin-left:2%;
+	border-radius:15%;
 }
 
 .img{
@@ -155,22 +182,30 @@ nav { font-size: 1.2em; font-weight: 600; }
 
 .description{
 	height:110px;
-	margin-left:30px;
+	margin-left:22%;
+	margin-top:-114px;
 }
 
+/* the internal introduction */
+.inner_introduction{
+	background-color:#FFFFFF;
+	display:none;
+	margin-left:2%;
+	position:absolute;
+	border-radius:2%;
+}
+ 
 /* right bar */
 .right_bar_bg{
 	position:absolute;
-	background-color:#F0F0F0;
-	filter:alpha(opacity=70);
-	-moz-opacity:0.7;
-	opacity:0.7; 
-	border-radius: 5px; 
 	float:right;
-	margin-top:20px;
 	margin-left:1070px;
+}
+
+#votebox,#right_container
+{
 	width:210px;
-	height:600px;
+	border-radius: 5px; 
 }
 
 .right_bar{
@@ -178,11 +213,23 @@ nav { font-size: 1.2em; font-weight: 600; }
 	margin-left:1090px;
 }
 
-#right_container{
+#member_joining{
+	background-color:white;
+	height:25px;
+	width:41%;
 	position:absolute;
-	margin-top:30px;
+	margin-top:54%;
+	margin-left:52%;
+	display:none;
+	border-style:double;
+	border-radius:5%;
+	border-width:10px;
+	border-color:blue;
+	overflow:auto;
+	font-size:130%;
 }
 
-#votebox{
-	margin-top:120px;
+#member_joining form, #member_joining input{
+	margin-left:15%;
+	margin-top:20px;
 }

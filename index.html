@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>GamePeen 電評網</title>
@@ -17,10 +17,23 @@
 		<!-- set the first welcome page of the web -->
 		<div class="first_page">
 			<div class="welcome_words" style="cursor:pointer;" onclick="change_top_page()">
-				<img id="welcome" src="img/welcome.png" style="position:absolute;width:55%; margin-left:5%;margin-top:6%; -webkit-transform:rotate(-13deg); -moz-transform:rotate(-13deg)">
-				<img id="to" src="img/to.png" style="position:absolute;width:10%; margin-left:48%; margin-top:21%; -webkit-transform:rotate(5deg); -moz-transform:rotate(5deg)">
+				<img id="welcome" src="img/welcome.png" style="position:absolute;width:55%; margin-left:5%;margin-top:6%; -webkit-transform:rotate(-13deg); -moz-transform:rotate(-13deg);">
+				<img id="to" src="img/to.png" style="position:absolute;width:10%; margin-left:48%; margin-top:21%; -webkit-transform:rotate(5deg); -moz-transform:rotate(5deg);">
 				<img id="enjoy" src="img/enjoy.png" style="position:absolute;width:15%; margin-left:3%; margin-top:1%; display:none; cursor:auto;">
-			</div> 
+			</div>
+			
+			<!-- set the dynamic images for some special subjects -->
+			<div id="subject_img" style="margin-top:6%; margin-left:22%; position:absolute; width:60%; height:60%; z-index:-1;">
+				<img class="roll left_roll " src="img/roll_begin.png">
+				<img class="middle_roll" src="img/roll_back.png" style="position:absolute; margin-left:2%; margin-top:-48%; height:92%; width:0%; z-index:1;">
+				<img class="roll right_roll" src="img/roll_begin.png " style="margin-left:-0.8%; display:none;">
+				
+				<!-- dynamic images -->
+				<diV id="dynamic_imgs">
+					<p style="font-size:200%; margin-top:50px; color:red"><b>輕   鬆   小   品</b></p>
+					<img id="123"  src="img/game1.jpg" style="position:absolute; width:80%; margin-top:-28%; margin-left:18%;">
+				</div>
+			</div>
 			
 			<img id="icon" src="img/gamepeen.png" style="position:absolute;width:20%; margin-left:70%;margin-top:29%;" onmousemove="change_icon();" onmouseout="back_icon();">
 			<img id="change_buttom" src="img/page_buttom_origin.png" onmousemove="change_buttom_in()" onmouseout="change_buttom_out()" onclick="roll()">
@@ -36,61 +49,63 @@
 					<div id="left_container">
 						<div class="col-md-2 col-sm-2 col-xs-12">
 							<div class="header">
-								<span style="font-size: 250% ; color:#F00078;" >電評網 GamePeen</span>
+								<span id="title" style="font-size: 200% ; " >電評網 GamePeen</span>
 							</div>
 						</div>		
 						<div >
 							<div >
-								<span class="gg" style="font-size: 100%"><i>好的遊戲讓你good game，壞的遊戲讓你完蛋~~~~</i></span>
+								<span class="gg" style="font-size: 100%"><i>好的遊戲讓你 good game，壞的遊戲讓你完蛋~~~~</i></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</nav>
-			
-			<marquee style="font-size: 150% ; color:#00E3E3;" bgcolor=5E005E >
-				<b>累了嗎，玩個遊戲吧~~</b>
-			</marquee>
-			
-			
+						
 			<div class="main">
 				<!-- set the background of the left_bar -->
 				<div class="left_bar_bg"></div>  
 				<!-- set the content of the left_bar -->
 				<div class="left_bar"> 
 					<h2 id="left1" style="color:#2828FF;">遊戲平台</h2>
-					<form id="gameplatformer" method="post">
-						<form> </form>
-						<h3 id="PS">Playstation</h3>
-						<form id="PS_element">
-						<INPUT type=checkbox name=interst>PS4<br>
-						<INPUT type=checkbox name=interst>PS3<br>
+						<form id="gameplatformer" method="post">
+							<form> </form>
+							<h3 id="PS">Playstation</h3>
+								<form id="PS_element">
+									<INPUT type=checkbox name=interst>PS4<br>
+									<INPUT type=checkbox name=interst>PS3<br>
+								</form>
+								
+							<h3 id="MS">Xbox</h3>
+								<form id="MS_element">
+									<INPUT type=checkbox name=interst>XboxOne<br>
+									<INPUT type=checkbox name=interst>Xbox360<br>
+								</form>
+								
+							<h3 id="Nin">Nintendo</h3>
+								<form id="Nin_element">
+									<INPUT type=checkbox name=interst>Wii<br>
+									<INPUT type=checkbox name=interst>WiiU<br>
+								</form>
+								
+							<h3 id="Protable">掌上遊戲機</h3>
+								<form id="Protable_element">
+									<INPUT type=checkbox name=interst>PSV<br>
+									<INPUT type=checkbox name=interst>N3DS<br>
+								</form>
+								
+							<h3 id="Mobile">行動裝置</h3>						
+								<form id="Mobile_element">
+									<INPUT type=checkbox name=interst>iPhone<br>
+									<INPUT type=checkbox name=interst>Android<br>
+									<INPUT type=checkbox name=interst>WinPhone<br>
+								</form>
+								
+							<h3 id="Else">其他類別</h3>
+								<form id="Else_element"> </form>	
 						</form>
-						<h3 id="MS">Xbox</h3>
-						<form id="MS_element">
-						<INPUT type=checkbox name=interst>XboxOne<br>
-						<INPUT type=checkbox name=interst>Xbox360<br>
-						</form>
-						<h3 id="Nin">Nintendo</h3>
-						<form id="Nin_element">
-						<INPUT type=checkbox name=interst>Wii<br>
-						<INPUT type=checkbox name=interst>WiiU<br>
-						</form>
-						<h3 id="Protable">掌上遊戲機</h3>
-						<form id="Protable_element">
-						<INPUT type=checkbox name=interst>PSV<br>
-						<INPUT type=checkbox name=interst>N3DS<br>
-						</form>
-						<h3 id="Mobile">行動裝置</h3>						
-						<form id="Mobile_element">
-						<INPUT type=checkbox name=interst>iPhone<br>
-						<INPUT type=checkbox name=interst>Android<br>
-						<INPUT type=checkbox name=interst>WinPhone<br>
-						</form>
-						<h3 id="Else">其他類別</h3>
-						<form id="Else_element"> </form>	
-					</form>
-                    <button id="insert1" > 新增標籤 </button> 
+						
+					<button id="insert1" > 新增標籤 </button> 
+					
 					<h2 id="left2" style="color:#2828FF;">遊戲類型</h2>
 					<form id="gametype" method="post">				
 						<INPUT type=checkbox name=interst>動作遊戲<br>
@@ -98,9 +113,9 @@
 						<INPUT type=checkbox name=interst>射擊遊戲<br>
 						<INPUT type=checkbox name=interst>線上遊戲<br>
 						<INPUT type=checkbox name=interst>策略模擬遊戲<br>
-
 					</form>
-                    <button id="insert2" > 新增標籤 </button> 
+                    <button id="insert2" style="margin-top:10%;"> 新增標籤 </button> 
+					
 				</div>
 				
 				<!-- set the background of the middle_part -->
@@ -108,73 +123,137 @@
 				<!-- set the content of the middle_part -->
 				<div class="middle_part">
 					<form method="post" >
-                    <input id="search" type="text" name="search"  placeholder="輸入想搜尋之關鍵字"  size="60" /> 
-                    <input type="submit" value="搜尋" />                     
+						<input id="search" type="text" name="search"  placeholder="輸入想搜尋之關鍵字"  size="60" /> 
+						<input type="submit" value="搜尋" />                     
                     </form>
 					<HR size="2" color="#2828FF" width="600"></HR>
 					
-					<div class="gameimg">
-						<img src="img/game1.jpg" width="110px" height="110px" class="img">
-						<p class="description"><i>神魔之塔:簡單描述~~~~</i></p>
+					
+					<!-- the internal introduction -->
+					<div class="inner_introduction">
+						<img id="ok" src="img/finish.jpg" onclick="finish_intro()" style="cursor:pointer; height:35px; margin-left:95.5%;">
+						
+						<!-- for game1 -->
+						<img id ="pic1" class="inner_game1" src="img/game1.jpg" style="width:80%; margin-left:10%; display:none;">
+						<div class="inner_game1" style="width:80%; margin-left:10%; height:100px;  display:none;">				
+							<span class="intro1"><i class="copy1">
+							<img class="go_to_comment" src="img/go_to.jpg" onclick="comment_page(1)" style="cursor:pointer; float:right; width:15%; margin-right:-10%">			
+							較詳細介紹</i></span>
+
+						</div>
+						
+						<!-- for game2 -->
+						<img class="inner_game2" src="img/game2.jpg" style="width:80%; margin-left:10%; display:none;">
+						<div class="inner_game2" style="width:80%; margin-left:10%; height:100px; display:none;">
+							<span><i>
+							<img class="go_to_comment" src="img/go_to.jpg" style="float:right; width:15%; margin-right:-10%">
+							較詳細介紹
+							</i></span>
+						</div>
+						
+						<!-- for game3 -->
+						<img class="inner_game3" src="img/game3.jpg" style="width:80%; margin-left:10%; display:none;">
+						<div class="inner_game3" style="width:80%; margin-left:10%; height:100px; display:none;">
+							<span><i>
+							<img class="go_to_comment" src="img/go_to.jpg" style="float:right; width:15%; margin-right:-10%">							
+							較詳細介紹
+							</i></span>
+						</div>
+
 					</div>
-					<div class="gameimg">
-						<img src="img/game2.jpg" width="110px" height="110px" class="img">
-						<p class="description"><i>英雄聯盟:簡單描述~~~~</i></p>
-					</div>
-					<div class="gameimg">
-						<img src="img/game3.jpg" width="110px" height="110px" class="img">
-						<p class="description"><i>流亡暗道:簡單敘述~~~~</i></p>
+					
+					<!-- set the title introduce of games -->
+					<div class="basic_intro" style="width:125%; height:500px; overflow:auto;">
+						<div class="gameimg game1" onmousemove="button_like(1)" onmouseout="reback(1)" onclick="inner_intro(1)">
+							<img class="title_show" src="img/game1.jpg" width="110px" height="110px" class="img">
+							<p class="description title_show"><i>神魔之塔:簡單描述~~~~</i></p>
+						</div>
+					
+						<div class="gameimg game2" onmousemove="button_like(2)" onmouseout="reback(2)"  onclick="inner_intro(2)">
+							<img class="title_show" src="img/game2.jpg" width="110px" height="110px" class="img">
+							<p class="description title_show"><i>英雄聯盟:簡單描述~~~~</i></p>
+						</div>
+					
+						<div class="gameimg game3" onmousemove="button_like(3)" onmouseout="reback(3)"  onclick="inner_intro(3)">
+							<img class="title_show" src="img/game3.jpg" width="110px" height="110px" class="img">
+							<p class="description title_show"><i>流亡黯道:簡單敘述~~~~</i></p>
+						</div>
 					</div>
 				</div>
-				
 				<!-- set the background of the right_bar -->
 				<div class="right_bar_bg"></div>  
 				<!-- set the content of the right_bar -->
 				<div class="right_bar">
 					
 					<!-- input the password for the member  -->
-					<div id="right_container">
-						<form id=" member " method="post" >
-                         會員登入:<br/>
-                        <input id="account" type="text"  name="accuont" placeholder="帳號"/><br/>
-						<input id="password" type="password"  name="password" placeholder="密碼"/> <br/>
-                        
-                        <input id="login" type="submit" value="登入" />
-                        </form>
+					<div id="right_container"  style="background-color:#F0F0F0; height:150px; position:absolute;">					
+						<form id="member" style="margin-top:12px; margin-left:3%;"><b>會員登入:</b><br/>
+							<input id="account" name="account" type="text"  name="account" placeholder="帳號" style="margin-top:10%; margin-left:3%;"/><br/>
+							<input id="password" name="password" type="password"  name="password" placeholder="密碼" style="position:absolute;  margin-left:2.7%;"/> <br/>                 
+							<input id="login" style="margin-top:20px; margin-left:6%;" type="submit" value="登入" onclick="return login()">
+						</form>
+						
+						<p id="joinus" style="color:blue; margin-top:-10%; margin-left:52%; cursor:pointer;" onclick="member_join()"><b><u>加入會員~~</u></b></p>
 					</div>
-					<div id="votebox">
-						<h2 style="color:#D9006C;">最近投票<h2>
-						<span style="font-size: 70%"><i>暫時沒有投票喔~~~~</i></span>
+					
+					<!-- join for the member -->
+					<div id="member_joining">
+						<img id="ok_member" src="img/finish.png" onclick="close_join()" style="cursor:pointer; height:35px; margin-left:93%; position:absolute; ">
+						<form method="POST" name="member_information" id="join_form">
+							<h1 style="margin-left:21%;;">加入會員</h1>
+							會員帳號:<input type="text" name="account_join" placeholder="會員帳號"></br>
+							會員密碼:<input type="password" name="password_join" placeholder="會員密碼"></br>
+							再次輸入:<input type="password" name="re_password_join" placeholder="再次輸入密碼"></br>
+							您的大名:<input type="text" name="name" placeholder="名字"></br>
+							遊戲喜好:
+									<select name="like" style="margin-left:13.8%;">
+										<option value="動作">動作遊戲</option>
+										<option value="運動">運動遊戲</option>
+										<option value="射擊">射擊遊戲</option>
+										<option value="線上">線上遊戲</option>
+										<option value="策略">策略模擬遊戲</option>
+									</select>
+							<input style="margin-left:5%;" type="submit" value="提交" onclick="return login_check()">
+						</form>	
+						<img id="gamepeen_join" src="img/gamepeen.png" style="margin-left:35%; margin-top:3.2%; width:60%;">
+					</div>
+					
+					<div id="votebox" style="margin-top:160px; background-color:#F0F0F0; height:440px;">
+						<h2 style="color:#D9006C; position:absolute; margin-top:10px; margin-left:7%;">最近投票<h2>
+						<span style="font-size:70%; position:absolute; margin-top:50px; margin-left:3%;"><i>暫時沒有投票喔~~~~</i></span>
 					</div>
 				</div>
 				
 			</div>
+			
+			<!-- set the version of the web and the copyright -->
+			<div style="margin-left:70%; margin-top:48%; position:absolute;">
+				<span style="font-size:110%;">version 3.3    ©2014  <a href="https://github.com/SimplePower/gg">SimplePower/gg@github.com</a></span>
 
+			</div>
 			
 			
 		</div>
 		
 		<script language="javascript">
-			function testForEnter(){    
-				if (event.keyCode == 13){        
-					event.cancelBubble = true;
-					event.returnValue = false;
-				}
-			}
 			
 			var counta = 1;
 			var countb = 1;
+			var for_name = -1;
+			
 			//change the performance of the first page
 			function change_top_page()
 			{
 				jQuery('#welcome').css('display','none');
 				jQuery('#to').css('display','none');
+				jQuery('#subject_img').css('z-index','0');
 				jQuery('#icon').animate({'margin-top':'38%','margin-left':'80%'},1000);
 				jQuery('#change_buttom').animate({'margin-left':'7%','margin-top':'37%'},1000);
 				setTimeout(("jQuery('#enjoy').show()"),900);
-				
-	
-
+				setTimeout(("jQuery('.roll').show()"),900);
+				setTimeout(("jQuery('.right_roll').animate({'margin-left':'90.1%'},2000)"),950);
+				setTimeout(("jQuery('.middle_roll').animate({'width':'91%'},2000)"),940);
+				setTimeout(("jQuery('#dynamic_imgs').show()"),2940);
 			}
 			
 			//change the page between the first page and the main page
@@ -209,6 +288,177 @@
 				
 			}
 			
+			//whenever the mouse over the divided area will like a button
+			function button_like(num)
+			{
+				var class_name = ".game" + num;
+				var obj = jQuery(class_name);
+				obj.css('border-style','outset');
+				obj.css('border-width','2px');
+			}
+			
+			//recover for the original state
+			function reback(num)
+			{
+				var class_name = ".game" + num;
+				var obj = jQuery(class_name);
+				obj.css('border-style','none');
+			}
+			
+			//show the internal introduction of each game
+			function inner_intro(num)
+			{
+				jQuery('.inner_introduction').show();
+				jQuery('#ok').show();
+				jQuery('.inner_introduction').animate({'width':'129%','height':'510px'},700);
+				
+				var class_name = ".inner_game" + num;
+				jQuery(class_name).show();
+				for_name = num;
+			}
+
+			//close the internal introduction
+			function finish_intro()
+			{
+				setTimeout(("jQuery('#ok').hide()"),590);
+				jQuery('.inner_introduction').animate({'width':'0%','height':'0px'},600);
+				
+				var class_name = ".inner_game" + for_name;
+				jQuery(class_name).hide();
+				for_name = -1;				
+			}
+			
+			//comment page
+			function comment_page(num)
+			{
+				jQuery('#pic'+num).animate({'width':'0%'},600);
+				jQuery('.copy'+num).hide();
+				//
+				$('.inner_game'+num).append('<br id="user" style="width:100%;">samhung</br>');
+				$('.inner_game'+num).append('<input id="comment" name="comment" placeholder="請留下評論" type="text" style="width:70%; min-height=300px;"/>');
+				$('.inner_game'+num).append('<input type="submit" value="送出" onclick="new_intro(1)">');
+				$('.inner_game'+num).append('<br margin-top:20px; style="width:100%;">Junkless 表示：</br>');
+				$('.inner_game'+num).append('<br style="width:100%;">這種遊戲太虐了</br>');	
+				
+			}
+			function new_intro(num)
+			{ 
+				$('.inner_game'+num).append('<br margin-top:20px; style="width:100%;">samhung 表示：</br>');
+				$('.inner_game'+num).append('<br style="width:100%;">我覺得這款遊戲滿好玩的</br>');
+				jQuery('#comment').value()='';
+			}			
+			//目前是單向破壞性前往評論頁面
+
+		
+			//for the window of member joining
+			function member_join()
+			{
+				jQuery('#member_joining').css('margin-top','8.4%');
+				jQuery('#member_joining').css('margin-left','8%');
+				jQuery('#member_joining').css('width','7%');
+				jQuery('#member_joining').css('position','fixed');
+				jQuery('#member_joining').animate({'width':'530px','height':'530px','margin-top':'-3%','margin-left':'-50%'},700);					
+			}
+			
+			//close the window of the member joining
+			function close_join()
+			{
+				$('#member_joining').hide(1000);
+
+			}
+			
+			//for the member joining
+			function login_check()
+			{
+				$.ajax({
+					url:"php/login_check.php",
+					data:
+					{
+						account:jQuery('input[name = account_join]').val(),
+						password:jQuery('input[name = password_join]').val(),
+						re_password:jQuery('input[name = re_password_join]').val(),
+						name:jQuery('input[name = name]').val(),
+						like:jQuery('select[name = like]').val()
+					},
+					
+					type:"POST",
+					
+					success:function(res)
+					{
+						//delete the message before
+						if($('#check'))
+							$('#check').remove();
+						
+						$('#loading').remove();
+						
+						
+						//successfully joined
+						if(res == "~~恭喜加入我們~~")
+						{
+							$('#gamepeen_join').show();
+							$('#member_joining').append('<h1 id="ya">');
+							$('#member_joining').append('<h1 id="check" style="color:blue; margin-left:15%; margin-top:20%;">' + res);
+							
+							setTimeout(("$('#member_joining').hide()"),2500);
+						}
+						
+						else
+						{
+							$('#gamepeen_join').hide();
+							$('#join_form').show();
+							$('#member_joining').append('<h2 id="check" style="color:red; margin-left:12%; margin-top:12%;">' + res);
+						}
+					}
+				});
+				
+				$('#join_form').hide();
+				$('#member_joining').append('<img id="loading" src="loading.gif" style="margin-left:20%; margin-top:45%;">');
+				
+				return false;
+			}
+			
+			//for the member login
+			function login()
+			{
+				$.ajax({
+					url:"php/login.php",
+					data:
+					{
+						account:jQuery('input[name = account]').val(),
+						password:jQuery('input[name = password]').val(),
+					},
+					
+					type:"POST",
+					
+					success:function(res)
+					{
+						//delete the message before
+						if($('#check'))
+							$('#check').remove();
+						
+						$('#loading').remove();
+						
+						
+						//successfully joined
+						if(res == "~~恭喜加入我們~~")
+						{
+							
+						}
+						
+						else
+						{
+							$('#member').show();
+							$('#member_joining').append('<h2 id="check">' + res);
+						}
+					}
+				});
+				
+				$('#member').hide();
+				$('#right_container').append('<img id="loading" src="loading.gif" style="margin-left:20%; margin-top:45%;">');
+				
+				return false;
+			}
+
 			//伸縮
 			    //$("#gameplatformer").hide();
 				//$("#gametype").hide();
@@ -244,20 +494,15 @@
 				$("#gameplatformer").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
 			counta++;	});
 */
-			$("#insert1").click(
-				function(){		  
-					$("#Else_element").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" onKeyDown="testForEnter();">   <input type="button" value= "新增" onclick="adda('+ counta+')" > </p> '); 
-					counta++;				
-				}				
-			);
+			  $("#insert1").click(function(){ 
+				$("#Else_element").append(' <p id="inputblocka'+counta+'"> <input id="newtypea'+counta+'"  type="text" >   <input type="button" value= "新增" onclick="adda('+ counta+')" >  </p>   '	); 
+			counta++;	});
 			
-			$("#insert2").click(
-				function(){ 
-					$("#gametype").append(' <p id="inputblockb' + countb +'"> <input id="newtypeb'+countb+'" type="text" onKeyDown="testForEnter();">   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> ');											
-					countb++;
-				}
-			);
-			   
+			  $("#insert2").click(function(){ 
+			    $("#gametype").append(	' <p id="inputblockb' + countb +'"> <input  id="newtypeb'+countb+'" type=text >   <input type=button  value=" 新增 "  onclick="addb('+ countb +')"> </p> '   );											
+			countb++;	});
+						 			
+           
 			
            function adda(id){
 			    $("#Else_element").append('<INPUT type=checkbox name=interst>'+$("#newtypea"+id).val()+' <br>')
