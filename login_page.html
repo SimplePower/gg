@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+	<head >
+		<title>Welcome to 電評網</title>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="電評網,電評,電玩遊戲評論,電玩評論,GamePeen,GG"/>
+		<meta name="description" content="GG 好的遊戲讓你good game，壞的遊戲讓你完蛋"/>
+		<meta name="google-site-verification" content="_kjMLw_mtUuIV0QlPfpWr9N7G6-_PPoVK9XocaaFKTY" />
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/login_page.css">
+		<!-- JavaScript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="javascript/login_page.js"></script>
+	</head>
+	
+	<body >				
+		<!-- for the member login -->
+		<div id="member_login" >
+			<h1>GAMEPEEN</h1>
+			<form id="login_form" name="member_login">
+				<p>帳號</p>
+				<input type="text" name="member_account" maxlength="12">
+				<p>密碼</p>
+				<input type="text" name="member_password" maxlength="12">
+				<input type="submit" value="登入" onclick="return login()">
+			</form>
+		</div>
+		
+		<div class="welcome_words" >
+			<img id="welcome" src="img/welcome.png">
+			<img id="to" src="img/to.png">
+			<img id="icon" src="img/gamepeen2.png">
+		</div>
+		
+		<!-- for the member joining -->
+		<div id="member_joining" >
+				<form id="member_information" name="member_information">
+					<h1 id="member_title">加入會員</h1>
+					<input type="text" name="account_join" maxlength="12" placeholder="會員帳號(12字以內的英數字)"></br>
+					<input type="password" name="password_join" maxlength="12" placeholder="會員密碼(12字以內的英數字)"></br>
+					<input type="password" name="re_password_join" maxlength="12" placeholder="再次輸入密碼"></br>
+					<input type="text" name="name" maxlength="12" placeholder="名字(12字以內的中英數字)"></br>
+					
+					<span>遊戲偏好：</span>
+					<select name="like">
+						<option value="動作">動作遊戲</option>
+						<option value="運動">運動遊戲</option>
+						<option value="射擊">射擊遊戲</option>
+						<option value="線上">線上遊戲</option>
+						<option value="策略">策略模擬遊戲</option>
+					</select>
+					
+					<!-- use check codes to prevent the some risk -->
+					<br/><p id="check_title"><i><b>點擊下框</b>，並輸入圖內英文字</i></p>
+					<input type="text" name="answer_check" size="10" maxlength="10" placeholder="請輸入驗證碼" onfocus="show_checkimg()">
+					<input type="submit" value="提交" onclick="return login_check()">					
+					<!-- box of the check codes -->
+					<p><div id="show_check_num"></div></p>
+				</form>	
+		</div>
+	</body>
+</html>
